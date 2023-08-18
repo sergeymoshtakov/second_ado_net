@@ -1,0 +1,40 @@
+﻿<Window x:Class="second.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:second"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Width="200" Orientation="Vertical" HorizontalAlignment="Left">
+            <Button x:Name="CreateGroup" Click="CreateGroup_Click">
+                CREATE TABLE
+            </Button>
+            <Button x:Name="InserGroup" Click="InsertGroup_Click">
+                INSERT TABLE
+            </Button>
+            <Button x:Name="GroupCount" Click="GroupCount_Click">
+                GROUP data count
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0">
+            <Label Content="Group content"/>
+            <ListView ItemsSource="{Binding columns}">
+                
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>
